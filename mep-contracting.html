@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEP Contracting | SKY POINT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a6c;
+            --secondary: #d4af37;
+            --accent: #2c5aa0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-en {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-ar {
+            font-size: 18px;
+            color: var(--secondary);
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .mep-hero {
+            background: linear-gradient(rgba(26, 58, 108, 0.85), rgba(26, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-logo {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        .mep-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .mep-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* MEP Intro */
+        .mep-intro {
+            background-color: white;
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-text h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 15px;
+        }
+
+        .intro-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* MEP Services */
+        .mep-services {
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            height: 200px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* MEP Systems */
+        .mep-systems {
+            background-color: white;
+        }
+
+        .systems-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .system-box {
+            flex: 1;
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .system-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .system-box.mechanical {
+            border-top: 4px solid #e74c3c;
+        }
+
+        .system-box.electrical {
+            border-top: 4px solid #f39c12;
+        }
+
+        .system-box.plumbing {
+            border-top: 4px solid #3498db;
+        }
+
+        .system-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .system-box.mechanical .system-icon {
+            color: #e74c3c;
+        }
+
+        .system-box.electrical .system-icon {
+            color: #f39c12;
+        }
+
+        .system-box.plumbing .system-icon {
+            color: #3498db;
+        }
+
+        .system-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* MEP Process */
+        .mep-process {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .mep-process .section-title h2 {
+            color: white;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .process-step:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* MEP Benefits */
+        .mep-benefits {
+            background-color: var(--light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Logo Banner Section */
+        .logo-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .logo-banner img {
+            max-width: 400px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .logo-banner h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .logo-banner p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .intro-content, .systems-content {
+                flex-direction: column;
+            }
+            
+            .mep-hero h1 {
+                font-size: 36px;
+            }
+            
+            .mep-hero p {
+                font-size: 18px;
+            }
+
+            .hero-logo {
+                max-width: 250px;
+            }
+
+            .logo-banner img {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mep-hero {
+                padding: 80px 0;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+
+            .logo-en {
+                font-size: 20px;
+            }
+
+            .logo-ar {
+                font-size: 16px;
+            }
+
+            .hero-logo {
+                max-width: 200px;
+            }
+
+            .logo-banner img {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Images/logo.png" alt="SKY POINT Logo" class="logo-img">
+                <div class="logo-text">
+                    <div class="logo-ar">سكاي بونت</div>
+                    <div class="logo-en">SKY POINT</div>
+                    <div class="logo-subtitle">GENERAL CONTRACTING & MAINTENANCE - L.L.C- S.P.C</div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#clients">Clients</a></li>
+                <li><a href="index.html#quality">Quality</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="mep-hero">
+        <div class="container">
+            <img src="Images/logo.png" alt="SKY POINT Logo" class="hero-logo">
+            <h1>MEP Contracting</h1>
+            <p>Professional Mechanical, Electrical, and Plumbing systems for optimal building performance</p>
+            <a href="#contact" class="cta-button">Get a Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- MEP Intro Section -->
+    <section class="mep-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>Comprehensive MEP Solutions</h3>
+                    <p>At SKY POINT, we specialize in the design, installation, and maintenance of Mechanical, Electrical, and Plumbing (MEP) systems within buildings and infrastructure projects. Our integrated approach ensures all building systems work together seamlessly for optimal performance.</p>
+                    <p>MEP Contracting involves the design, installation, and maintenance of Mechanical, Electrical, and Plumbing systems within buildings and infrastructure projects. These systems are vital for a building's functionality, safety, comfort for occupants, and energy efficiency.</p>
+                    <p>In regions like the UAE with extreme climates and rapid development, reliable and efficient MEP systems are critical for optimal building performance, energy efficiency goals, and compliance with local regulations.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="MEP Systems">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEP Services Section -->
+    <section class="mep-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our MEP Services</h2>
+                <p>Comprehensive solutions for all your mechanical, electrical, and plumbing needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>HVAC Systems</h3>
+                        <p>Design, installation, and maintenance of Heating, Ventilation, and Air Conditioning systems for optimal climate control and indoor air quality.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Electrical Systems</h3>
+                        <p>Complete electrical solutions including power distribution, lighting design, backup power systems, and electrical safety compliance.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Plumbing Systems</h3>
+                        <p>Comprehensive plumbing services including water supply, drainage, sewage systems, and specialized plumbing installations.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Fire Protection</h3>
+                        <p>Design and installation of fire alarm systems, sprinklers, and fire suppression systems to ensure building safety and code compliance.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Building Automation</h3>
+                        <p>Integration of smart building systems for energy management, lighting control, and centralized building operations.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>MEP Maintenance</h3>
+                        <p>Preventive and corrective maintenance services to ensure all MEP systems operate at peak efficiency and reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEP Systems Section -->
+    <section class="mep-systems">
+        <div class="container">
+            <div class="section-title">
+                <h2>MEP Systems Overview</h2>
+                <p>Understanding the core components of Mechanical, Electrical, and Plumbing systems</p>
+            </div>
+            
+            <div class="systems-content">
+                <div class="system-box mechanical">
+                    <div class="system-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Mechanical Systems</h3>
+                    <p>Primarily focuses on Heating, Ventilation, Air Conditioning (HVAC) systems, crucial for climate control and indoor air quality, along with other mechanical equipment like elevators and fire safety systems.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>HVAC System Design & Installation</li>
+                        <li>Ventilation & Air Quality Control</li>
+                        <li>Energy Recovery Systems</li>
+                        <li>Building Pressurization</li>
+                        <li>Smoke Control Systems</li>
+                        <li>Mechanical Equipment Rooms</li>
+                    </ul>
+                </div>
+                
+                <div class="system-box electrical">
+                    <div class="system-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Systems</h3>
+                    <p>Encompasses power distribution, lighting design, backup power solutions, and ensuring overall electrical safety and functionality within a structure.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Power Distribution & Panels</li>
+                        <li>Lighting System Design</li>
+                        <li>Emergency & Backup Power</li>
+                        <li>Electrical Safety Systems</li>
+                        <li>Data & Communication Wiring</li>
+                        <li>Energy Management Systems</li>
+                    </ul>
+                </div>
+                
+                <div class="system-box plumbing">
+                    <div class="system-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3>Plumbing Systems</h3>
+                    <p>Deals with water supply, drainage, sewage systems, and sometimes includes specialized systems like irrigation or firefighting plumbing.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Potable Water Systems</li>
+                        <li>Sanitary Drainage Systems</li>
+                        <li>Storm Water Management</li>
+                        <li>Gas Piping Systems</li>
+                        <li>Water Conservation Systems</li>
+                        <li>Medical Gas Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Banner Section -->
+    <section class="logo-banner">
+        <div class="container">
+            <img src="Images/logo.png" alt="SKY POINT Logo">
+            <h2>Expert MEP Contracting Services</h2>
+            <p>With years of experience in the UAE construction industry, SKY POINT delivers reliable and efficient MEP solutions for projects of all sizes across Abu Dhabi and beyond.</p>
+        </div>
+    </section>
+
+    <!-- MEP Process Section -->
+    <section class="mep-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our MEP Implementation Process</h2>
+                <p>Systematic approach to ensuring optimal MEP system performance</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Needs Assessment</h3>
+                    <p>Comprehensive evaluation of project requirements, building usage, and client specifications for MEP systems.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>System Design</h3>
+                    <p>Development of detailed MEP designs, calculations, and specifications tailored to the project requirements.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Coordination</h3>
+                    <p>Integration of MEP systems with architectural and structural elements to avoid conflicts and ensure seamless operation.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Installation</h3>
+                    <p>Professional installation of all MEP components following industry standards and manufacturer specifications.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Testing & Commissioning</h3>
+                    <p>Thorough testing of all systems to ensure proper function, efficiency, and compliance with design specifications.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Documentation & Training</h3>
+                    <p>Provision of complete system documentation and operator training for ongoing maintenance and operation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEP Benefits Section -->
+    <section class="mep-benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefits of Professional MEP Contracting</h2>
+                <p>How our MEP services add value to your building project</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Energy Efficiency</h3>
+                        <p>Optimized MEP systems reduce energy consumption, lower operating costs, and minimize environmental impact.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Safety</h3>
+                        <p>Properly designed and installed MEP systems ensure building safety, code compliance, and occupant protection.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Occupant Comfort</h3>
+                        <p>Well-designed MEP systems provide optimal indoor environmental quality, temperature control, and comfort.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Cost Savings</h3>
+                        <p>Efficient MEP systems reduce long-term operating and maintenance costs while extending equipment lifespan.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>System Reliability</h3>
+                        <p>Professional installation and maintenance ensure MEP systems operate reliably with minimal downtime.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Regulatory Compliance</h3>
+                        <p>Our MEP solutions meet all local building codes, regulations, and international standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Start Your MEP Project</h2>
+                <p>Contact us for a free consultation and quote for your MEP needs</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Our Location</h3>
+                        <p>Abu Dhabi, U.A.E</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone Number</h3>
+                        <p>+971 55 180 6383</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Address</h3>
+                        <p>info@skypointuae.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Website</h3>
+                        <p>www.Skypointuae.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="Images/logo.png" alt="SKY POINT Logo" style="max-width: 200px; margin-bottom: 20px;">
+                    <h3>SKY POINT</h3>
+                    <p>سكاي بونت</p>
+                    <p>GENERAL CONTRACTING & MAINTENANCE - L.L.C- S.P.C</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="cctv.html">CCTV Security & Surveillance</a></li>
+                        <li><a href="interior-exterior-design.html">Interior & Exterior Design</a></li>
+                        <li><a href="cable-wireless-networks.html">Cable & Wireless Networks</a></li>
+                        <li><a href="sitework-foundations.html">Site Work & Foundations</a></li>
+                        <li><a href="mep-contracting.html">MEP Contracting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#clients">Clients</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Abu Dhabi, U.A.E</li>
+                        <li><i class="fas fa-phone-alt"></i> +971 55 180 6383</li>
+                        <li><i class="fas fa-envelope"></i> info@skypointuae.com</li>
+                        <li><i class="fas fa-globe"></i> www.Skypointuae.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SKY POINT General Contracting & Maintenance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

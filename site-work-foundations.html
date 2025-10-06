@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Work & Foundations | SKY POINT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a6c;
+            --secondary: #d4af37;
+            --accent: #2c5aa0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-en {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-ar {
+            font-size: 18px;
+            color: var(--secondary);
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .sitework-hero {
+            background: linear-gradient(rgba(26, 58, 108, 0.85), rgba(26, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-logo {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        .sitework-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .sitework-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Sitework Intro */
+        .sitework-intro {
+            background-color: white;
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-text h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 15px;
+        }
+
+        .intro-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Sitework Services */
+        .sitework-services {
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            height: 200px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Site Preparation Process */
+        .site-preparation {
+            background-color: white;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Foundation Types */
+        .foundation-types {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .foundation-types .section-title h2 {
+            color: white;
+        }
+
+        .foundation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .foundation-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .foundation-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .foundation-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Equipment Section */
+        .equipment-section {
+            background-color: var(--light);
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .equipment-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .equipment-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .equipment-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .equipment-item h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Logo Banner Section */
+        .logo-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .logo-banner img {
+            max-width: 400px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .logo-banner h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .logo-banner p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sitework Benefits */
+        .sitework-benefits {
+            background-color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .intro-content {
+                flex-direction: column;
+            }
+            
+            .sitework-hero h1 {
+                font-size: 36px;
+            }
+            
+            .sitework-hero p {
+                font-size: 18px;
+            }
+
+            .hero-logo {
+                max-width: 250px;
+            }
+
+            .logo-banner img {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .sitework-hero {
+                padding: 80px 0;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+
+            .logo-en {
+                font-size: 20px;
+            }
+
+            .logo-ar {
+                font-size: 16px;
+            }
+
+            .hero-logo {
+                max-width: 200px;
+            }
+
+            .logo-banner img {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Images/Logo.png" alt="SKY POINT Logo" class="logo-img">
+                <div class="logo-text">
+                    <div class="logo-ar">سكاي بونت</div>
+                    <div class="logo-en">SKY POINT</div>
+                    <div class="logo-subtitle">GENERAL CONTRACTING & MAINTENANCE - L.L.C- S.P.C</div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#clients">Clients</a></li>
+                <li><a href="index.html#quality">Quality</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="sitework-hero">
+        <div class="container">
+            <img src="Image/Logo.png" alt="SKY POINT Logo" class="hero-logo">
+            <h1>Site Work & Foundations</h1>
+            <p>Professional site preparation and foundation construction for stable, durable structures</p>
+            <a href="#contact" class="cta-button">Get a Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Sitework Intro Section -->
+    <section class="sitework-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>Building on Solid Ground</h3>
+                    <p>At SKY POINT, we specialize in comprehensive site work and foundation construction services that form the critical first phase of any building project. Our expertise ensures that your structure is built on a solid, stable foundation that will stand the test of time.</p>
+                    <p>Site work involves the various personnel, including employees and subcontractors, who work at a specific construction or project site, performing physical labor and other tasks related to the project's execution. This includes excavation, grading, utility installation, and preparing the land for construction.</p>
+                    <p>Our experienced team utilizes state-of-the-art equipment and follows industry best practices to deliver exceptional results for residential, commercial, and industrial projects throughout the UAE.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Site Work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sitework Services Section -->
+    <section class="sitework-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Site Work Services</h2>
+                <p>Comprehensive solutions for site preparation and foundation construction</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Earthwork & Excavation</h3>
+                        <p>Professional excavation services including site clearing, grading, trenching, and earthmoving to prepare your site for construction.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Site Preparation</h3>
+                        <p>Comprehensive site preparation including soil testing, land clearing, demolition, and utility relocation for construction projects.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Foundation Construction</h3>
+                        <p>Design and construction of various foundation types including shallow foundations, deep foundations, and specialized foundation systems.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Drainage & Utilities</h3>
+                        <p>Installation of drainage systems, sewer lines, water mains, and other underground utilities essential for building functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Site Grading</h3>
+                        <p>Precise grading and leveling of construction sites to ensure proper drainage, stability, and compliance with building codes.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Shoring & Retaining Walls</h3>
+                        <p>Construction of shoring systems and retaining walls to support excavations and prevent soil movement during construction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Banner Section -->
+    <section class="logo-banner">
+        <div class="container">
+            <img src="Image/Logo.png" alt="SKY POINT Logo">
+            <h2>Expert Site Preparation & Foundation Specialists</h2>
+            <p>With years of experience in the UAE construction industry, SKY POINT delivers reliable site work and foundation solutions for projects of all sizes across Abu Dhabi and beyond.</p>
+        </div>
+    </section>
+
+    <!-- Site Preparation Process Section -->
+    <section class="site-preparation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Site Preparation Process</h2>
+                <p>Systematic approach to ensuring proper site readiness</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Site Assessment</h3>
+                    <p>Comprehensive evaluation of the site including soil testing, topography analysis, and existing conditions assessment.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Planning & Design</h3>
+                    <p>Development of detailed site plans, foundation designs, and construction sequencing based on project requirements.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Site Clearing</h3>
+                    <p>Removal of vegetation, debris, and existing structures to prepare the site for excavation and construction.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Excavation</h3>
+                    <p>Precise excavation according to design specifications, including trenching for utilities and foundation pits.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Grading & Compaction</h3>
+                    <p>Leveling the site to proper elevations and compacting soil to achieve required density for foundation support.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Foundation Construction</h3>
+                    <p>Building the foundation structure according to engineering specifications, including formwork, reinforcement, and concrete placement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foundation Types Section -->
+    <section class="foundation-types">
+        <div class="container">
+            <div class="section-title">
+                <h2>Foundation Types We Build</h2>
+                <p>Specialized foundation solutions for different soil conditions and building requirements</p>
+            </div>
+            
+            <div class="foundation-grid">
+                <div class="foundation-item">
+                    <h3>Shallow Foundations</h3>
+                    <p>Spread footings, mat foundations, and slab-on-grade systems suitable for stable soil conditions with adequate bearing capacity.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <h3>Deep Foundations</h3>
+                    <p>Pile foundations, drilled shafts, and caissons that transfer building loads to deeper, more stable soil layers or bedrock.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <h3>Raft Foundations</h3>
+                    <p>Large concrete slabs that spread the building load over the entire footprint, ideal for weak soil conditions or heavy structures.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <h3>Strip Foundations</h3>
+                    <p>Continuous concrete strips that support load-bearing walls, commonly used in residential and light commercial construction.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <h3>Pad Foundations</h3>
+                    <p>Isolated concrete pads that support individual columns or pillars, suitable for framed structures with point loads.</p>
+                </div>
+                
+                <div class="foundation-item">
+                    <h3>Specialized Foundations</h3>
+                    <p>Custom foundation solutions for challenging sites including underpinning, ground improvement, and seismic-resistant designs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Equipment & Capabilities</h2>
+                <p>State-of-the-art machinery for efficient site work and foundation construction</p>
+            </div>
+            
+            <div class="equipment-grid">
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3>Excavators</h3>
+                    <p>Various sizes from mini to large excavators for precise digging and earthmoving operations.</p>
+                </div>
+                
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-truck-monster"></i>
+                    </div>
+                    <h3>Bulldozers</h3>
+                    <p>Heavy-duty bulldozers for land clearing, grading, and moving large volumes of earth.</p>
+                </div>
+                
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3>Compactors</h3>
+                    <p>Vibratory compactors and rollers for achieving proper soil density and compaction.</p>
+                </div>
+                
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Pile Drivers</h3>
+                    <p>Specialized equipment for driving piles and installing deep foundation elements.</p>
+                </div>
+                
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3>Dump Trucks</h3>
+                    <p>Fleet of dump trucks for efficient material transport and site cleanup.</p>
+                </div>
+                
+                <div class="equipment-item">
+                    <div class="equipment-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Survey Equipment</h3>
+                    <p>Advanced surveying tools including GPS and laser levels for precise site layout and grading.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sitework Benefits Section -->
+    <section class="sitework-benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefits of Professional Site Work</h2>
+                <p>How our expertise adds value to your construction project</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Structural Integrity</h3>
+                        <p>Proper site preparation and foundation construction ensure the long-term stability and safety of your building.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Time Efficiency</h3>
+                        <p>Experienced crews and proper equipment ensure site work is completed efficiently, keeping your project on schedule.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Cost Savings</h3>
+                        <p>Proper planning and execution prevent costly rework and future structural issues, saving money in the long run.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Code Compliance</h3>
+                        <p>Our work meets all local building codes and regulations, ensuring your project passes inspections without issues.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Problem Prevention</h3>
+                        <p>Thorough site assessment identifies potential issues early, allowing for proactive solutions before construction begins.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Increased Property Value</h3>
+                        <p>Quality site work and solid foundations significantly increase the value and longevity of your property.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Start Your Site Work Project</h2>
+                <p>Contact us for a free consultation and quote for your site preparation and foundation needs</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Our Location</h3>
+                        <p>Abu Dhabi, U.A.E</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone Number</h3>
+                        <p>+971 55 180 6383</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Address</h3>
+                        <p>info@skypointuae.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Website</h3>
+                        <p>www.Skypointuae.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="Image/Logo.png" alt="SKY POINT Logo" style="max-width: 200px; margin-bottom: 20px;">
+                    <h3>SKY POINT</h3>
+                    <p>سكاي بونت</p>
+                    <p>GENERAL CONTRACTING & MAINTENANCE - L.L.C- S.P.C</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="cctv.html">CCTV Security & Surveillance</a></li>
+                        <li><a href="interior-exterior-design.html">Interior & Exterior Design</a></li>
+                        <li><a href="cable-wireless-networks.html">Cable & Wireless Networks</a></li>
+                        <li><a href="sitework-foundations.html">Site Work & Foundations</a></li>
+                        <li><a href="index.html#services">MEP Contracting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#clients">Clients</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Abu Dhabi, U.A.E</li>
+                        <li><i class="fas fa-phone-alt"></i> +971 55 180 6383</li>
+                        <li><i class="fas fa-envelope"></i> info@skypointuae.com</li>
+                        <li><i class="fas fa-globe"></i> www.Skypointuae.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SKY POINT General Contracting & Maintenance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading & Landscaping | SKY POINT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a6c;
+            --secondary: #2e8b57;
+            --accent: #2c5aa0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --green-light: #e8f5e8;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-en {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-ar {
+            font-size: 18px;
+            color: var(--secondary);
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .landscaping-hero {
+            background: linear-gradient(rgba(26, 58, 108, 0.85), rgba(46, 139, 87, 0.8)), url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-logo {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        .landscaping-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .landscaping-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Landscaping Intro */
+        .landscaping-intro {
+            background-color: white;
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-text h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 15px;
+        }
+
+        .intro-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Landscaping Services */
+        .landscaping-services {
+            background-color: var(--green-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Grading vs Landscaping */
+        .comparison {
+            background-color: white;
+        }
+
+        .comparison-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .comparison-box {
+            flex: 1;
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .comparison-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-box.grading {
+            border-top: 4px solid var(--primary);
+        }
+
+        .comparison-box.landscaping {
+            border-top: 4px solid var(--secondary);
+        }
+
+        .comparison-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .comparison-box.landscaping .comparison-icon {
+            color: var(--secondary);
+        }
+
+        .comparison-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .comparison-box.landscaping h3 {
+            color: var(--secondary);
+        }
+
+        /* Design Process */
+        .design-process {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .design-process .section-title h2 {
+            color: white;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .process-step:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Portfolio Gallery */
+        .portfolio-gallery {
+            background-color: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        /* Landscaping Benefits */
+        .landscaping-benefits {
+            background-color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Logo Banner Section */
+        .logo-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .logo-banner img {
+            max-width: 400px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .logo-banner h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .logo-banner p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .intro-content, .comparison-content {
+                flex-direction: column;
+            }
+            
+            .landscaping-hero h1 {
+                font-size: 36px;
+            }
+            
+            .landscaping-hero p {
+                font-size: 18px;
+            }
+
+            .hero-logo {
+                max-width: 250px;
+            }
+
+            .logo-banner img {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .landscaping-hero {
+                padding: 80px 0;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+
+            .logo-en {
+                font-size: 20px;
+            }
+
+            .logo-ar {
+                font-size: 16px;
+            }
+
+            .hero-logo {
+                max-width: 200px;
+            }
+
+            .logo-banner img {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Images/logo.png" alt="SKY POINT Logo" class="logo-img">
+                <div class="logo-text">
+                    <div class="logo-ar">سكاي بونت</div>
+                    <div class="logo-en">SKY POINT</div>
+                    <div class="logo-subtitle">GENERAL CONTRACTING & MAINTENANCE - L.L.C- S.P.C</div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#clients">Clients</a></li>
+                <li><a href="index.html#quality">Quality</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="landscaping-hero">
+        <div class="container">
+            <img src="Images/logo.png" alt="SKY POINT Logo" class="hero-logo">
+            <h1>Grading & Landscaping</h1>
+            <p>Transforming outdoor spaces into beautiful, functional environments through expert grading and landscaping</p>
+            <a href="#contact" class="cta-button">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Landscaping Intro Section -->
+    <section class="landscaping-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>Creating Beautiful Outdoor Environments</h3>
+                    <p>At SKY POINT, we specialize in comprehensive grading and landscaping services that transform ordinary outdoor spaces into beautiful, functional environments. Our approach combines technical expertise with artistic vision to create landscapes that enhance both aesthetics and property value.</p>
+                    <p>Landscaping is the process of making a garden or other piece of land more attractive by altering the existing design, adding ornamental features, and planting trees and shrubs. It involves both the art of creating beautiful environments and the science of ensuring proper drainage and soil stability.</p>
+                    <p>From residential gardens to commercial properties, our team of experienced landscapers works closely with you to bring your outdoor vision to life while ensuring every detail aligns with your needs and the local environment.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Landscaping Design">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landscaping Services Section -->
+    <section class="landscaping-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Landscaping Services</h2>
+                <p>Comprehensive solutions for beautiful and functional outdoor spaces</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Landscape Design">
+                    </div>
+                    <div class="service-content">
+                        <h3>Landscape Design</h3>
+                        <p>Custom landscape designs that blend aesthetics with functionality, creating beautiful outdoor spaces tailored to your preferences.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Site Grading">
+                    </div>
+                    <div class="service-content">
+                        <h3>Site Grading</h3>
+                        <p>Professional grading services to ensure proper drainage, prevent erosion, and create level surfaces for construction and landscaping.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1571836758082-5bd0cfad2995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Planting Design">
+                    </div>
+                    <div class="service-content">
+                        <h3>Planting Design</h3>
+                        <p>Strategic selection and placement of trees, shrubs, and plants to create visually appealing and sustainable landscapes.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1582567657536-73dcab5b5982?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Irrigation Systems">
+                    </div>
+                    <div class="service-content">
+                        <h3>Irrigation Systems</h3>
+                        <p>Design and installation of efficient irrigation systems to keep your landscape healthy while conserving water.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1582567657536-73dcab5b5982?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Hardscape Construction">
+                    </div>
+                    <div class="service-content">
+                        <h3>Hardscape Construction</h3>
+                        <p>Construction of patios, walkways, retaining walls, and other non-living elements that complement your landscape design.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Landscape Lighting">
+                    </div>
+                    <div class="service-content">
+                        <h3>Landscape Lighting</h3>
+                        <p>Installation of outdoor lighting systems that enhance safety, security, and the nighttime beauty of your property.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grading vs Landscaping Section -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-title">
+                <h2>Grading vs Landscaping</h2>
+                <p>Understanding the distinct aspects of outdoor transformation</p>
+            </div>
+            
+            <div class="comparison-content">
+                <div class="comparison-box grading">
+                    <div class="comparison-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Site Grading</h3>
+                    <p>Site grading involves reshaping the land to achieve proper drainage, create level surfaces, and prepare the site for construction or landscaping. It's the foundational work that ensures water flows away from structures and prevents erosion.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Ensures proper water drainage</li>
+                        <li>Creates level building surfaces</li>
+                        <li>Prevents soil erosion</li>
+                        <li>Prepares site for construction</li>
+                        <li>Addresses soil compaction issues</li>
+                        <li>Meets local building codes</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-box landscaping">
+                    <div class="comparison-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Landscaping</h3>
+                    <p>Landscaping focuses on the aesthetic and functional enhancement of outdoor spaces through the strategic placement of plants, trees, hardscapes, and other elements. It creates beautiful, usable environments that complement the architecture.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Enhances property aesthetics</li>
+                        <li>Creates functional outdoor spaces</li>
+                        <li>Increases property value</li>
+                        <li>Provides environmental benefits</li>
+                        <li>Supports biodiversity</li>
+                        <li>Improves quality of life</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Banner Section -->
+    <section class="logo-banner">
+        <div class="container">
+            <img src="Images/logo.png" alt="SKY POINT Logo">
+            <h2>Expert Grading & Landscaping Specialists</h2>
+            <p>With years of experience in the UAE climate, SKY POINT creates sustainable, beautiful landscapes that thrive in the local environment while enhancing property value and enjoyment.</p>
+        </div>
+    </section>
+
+    <!-- Design Process Section -->
+    <section class="design-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Landscaping Process</h2>
+                <p>A structured approach to creating your perfect outdoor space</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We begin with an in-depth consultation to understand your vision, needs, and the specific characteristics of your property.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Site Analysis</h3>
+                    <p>Our team conducts a thorough analysis of your site, including soil conditions, drainage patterns, sun exposure, and existing vegetation.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Design Development</h3>
+                    <p>We create detailed landscape designs that incorporate your preferences, site conditions, and sustainable practices.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Site Preparation</h3>
+                    <p>Our crew prepares the site through proper grading, soil amendment, and installation of necessary infrastructure.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Implementation</h3>
+                    <p>We bring the design to life through careful installation of plants, hardscapes, irrigation, and other landscape elements.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Final Touches</h3>
+                    <p>We add the finishing elements and provide guidance on maintenance to ensure your landscape continues to thrive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section -->
+    <section class="portfolio-gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Landscaping Portfolio</h2>
+                <p>Showcasing our recent grading and landscaping projects</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Residential Garden">
+                    <div class="gallery-overlay">
+                        <h3>Residential Garden</h3>
+                        <p>Private Villa Project</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Commercial Landscape">
+                    <div class="gallery-overlay">
+                        <h3>Commercial Landscape</h3>
+                        <p>Office Complex</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571836758082-5bd0cfad2995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Park Development">
+                    <div class="gallery-overlay">
+                        <h3>Park Development</h3>
+                        <p>Community Project</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582567657536-73dcab5b5982?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Poolside Landscaping">
+                    <div class="gallery-overlay">
+                        <h3>Poolside Landscaping</h3>
+                        <p>Residential Project</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582567657536-73dcab5b5982?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Roof Garden">
+                    <div class="gallery-overlay">
+                        <h3>Roof Garden</h3>
+                        <p>Commercial Building</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Entrance Landscaping">
+                    <div class="gallery-overlay">
+                        <h3>Entrance Landscaping</h3>
+                        <p>Hotel Project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landscaping Benefits Section -->
+    <section class="landscaping-benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefits of Professional Landscaping</h2>
+                <p>How our landscaping services add value to your property and lifestyle</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Increased Property Value</h3>
+                        <p>Well-designed landscapes can increase property value by 10-20%, providing an excellent return on investment.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Improved Drainage</h3>
+                        <p>Proper grading ensures water flows away from structures, preventing foundation damage and basement flooding.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Environmental Benefits</h3>
+                        <p>Landscapes improve air quality, reduce soil erosion, and provide habitats for local wildlife.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Energy Efficiency</h3>
+                        <p>Strategic tree planting can reduce cooling costs by providing shade and wind protection for your property.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Well-being</h3>
+                        <p>Beautiful outdoor spaces reduce stress, improve mood, and provide areas for relaxation and recreation.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Social Spaces</h3>
+                        <p>Well-designed landscapes create inviting spaces for entertaining, family activities, and community interaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Start Your Landscaping Project</h2>
+                <p>Contact us to discuss your grading and landscaping needs</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Our Location</h3>
+                        <p>Abu Dhabi, U.A.E</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone Number</h3>
+                        <p>+971 55 180 6383</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Address</h3>
+                        <p>info@skypointuae.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Website</h3>
+                        <p>www.Skypointuae.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="Images/logo.png" alt="SKY POINT Logo" style="max-width: 200px; margin-bottom: 20px;">
+                    <h3>SKY POINT</h3>
+                    <p>سكاي بونت</p>
+                    <p>GENERAL CONTRACTING & MAINTENANCE - L.L.C- S.P.C</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="cctv.html">CCTV Security & Surveillance</a></li>
+                        <li><a href="interior-exterior-design.html">Interior & Exterior Design</a></li>
+                        <li><a href="cable-wireless-networks.html">Cable & Wireless Networks</a></li>
+                        <li><a href="sitework-foundations.html">Site Work & Foundations</a></li>
+                        <li><a href="grading-landscaping.html">Grading & Landscaping</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#clients">Clients</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Abu Dhabi, U.A.E</li>
+                        <li><i class="fas fa-phone-alt"></i> +971 55 180 6383</li>
+                        <li><i class="fas fa-envelope"></i> info@skypointuae.com</li>
+                        <li><i class="fas fa-globe"></i> www.Skypointuae.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SKY POINT General Contracting & Maintenance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>

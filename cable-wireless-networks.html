@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cable & Wireless Networks | SKY POINT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a6c;
+            --secondary: #d4af37;
+            --accent: #2c5aa0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-en {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-ar {
+            font-size: 18px;
+            color: var(--secondary);
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .networks-hero {
+            background: linear-gradient(rgba(26, 58, 108, 0.85), rgba(26, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-logo {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        .networks-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .networks-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Networks Intro */
+        .networks-intro {
+            background-color: white;
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-text h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 15px;
+        }
+
+        .intro-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Networks Services */
+        .networks-services {
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            height: 200px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Cable vs Wireless */
+        .comparison {
+            background-color: white;
+        }
+
+        .comparison-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .comparison-box {
+            flex: 1;
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .comparison-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-box.cable {
+            border-top: 4px solid var(--primary);
+        }
+
+        .comparison-box.wireless {
+            border-top: 4px solid var(--secondary);
+        }
+
+        .comparison-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .comparison-box.wireless .comparison-icon {
+            color: var(--secondary);
+        }
+
+        .comparison-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .comparison-box.wireless h3 {
+            color: var(--secondary);
+        }
+
+        /* Network Solutions */
+        .network-solutions {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .network-solutions .section-title h2 {
+            color: white;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .solution-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .solution-item:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .solution-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Installation Process */
+        .installation-process {
+            background-color: white;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Network Benefits */
+        .network-benefits {
+            background-color: var(--light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        /* Logo Banner Section */
+        .logo-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .logo-banner img {
+            max-width: 400px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .logo-banner h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .logo-banner p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .intro-content, .comparison-content {
+                flex-direction: column;
+            }
+            
+            .networks-hero h1 {
+                font-size: 36px;
+            }
+            
+            .networks-hero p {
+                font-size: 18px;
+            }
+
+            .hero-logo {
+                max-width: 250px;
+            }
+
+            .logo-banner img {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .networks-hero {
+                padding: 80px 0;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+
+            .logo-en {
+                font-size: 20px;
+            }
+
+            .logo-ar {
+                font-size: 16px;
+            }
+
+            .hero-logo {
+                max-width: 200px;
+            }
+
+            .logo-banner img {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Images/Logo.png" alt="SKY POINT Logo" class="logo-img">
+                <div class="logo-text">
+                    <div class="logo-ar">سكاي بونت</div>
+                    <div class="logo-en">SKY POINT</div>
+                    <div class="logo-subtitle">GENERAL CONTRACTING & MAINTENANCE - L.L.C- S.P.C</div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#clients">Clients</a></li>
+                <li><a href="index.html#quality">Quality</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="networks-hero">
+        <div class="container">
+            <img src="Image/Logo.png" alt="SKY POINT Logo" class="hero-logo">
+            <h1>Cable & Wireless Networks</h1>
+            <p>Professional installation of structured cabling and wireless network systems for seamless connectivity</p>
+            <a href="#contact" class="cta-button">Get a Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Networks Intro Section -->
+    <section class="networks-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>Advanced Network Solutions</h3>
+                    <p>At SKY POINT, we specialize in designing and installing comprehensive cable and wireless network systems for residential, commercial, and industrial applications. Our solutions ensure reliable, high-speed connectivity for all your communication needs.</p>
+                    <p>A network is fundamentally an interconnected system or group of people, devices, or things that exchange information and share resources. In today's digital world, a robust network infrastructure is essential for business operations and modern living.</p>
+                    <p>Our team of certified network engineers and technicians works with the latest technologies to deliver scalable, secure, and efficient network solutions tailored to your specific requirements.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Network Installation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Networks Services Section -->
+    <section class="networks-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Network Services</h2>
+                <p>Comprehensive solutions for all your connectivity needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Structured Cabling</h3>
+                        <p>Professional installation of structured cabling systems including Cat5e, Cat6, Cat6a, and fiber optic cables for reliable data transmission.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Wireless Network Installation</h3>
+                        <p>Design and implementation of robust wireless networks with access points, controllers, and security protocols for seamless connectivity.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Network Infrastructure</h3>
+                        <p>Complete network infrastructure setup including switches, routers, firewalls, and servers for optimal performance and security.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Network Security</h3>
+                        <p>Implementation of comprehensive security measures including firewalls, VPNs, intrusion detection, and access control systems.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>VoIP Systems</h3>
+                        <p>Installation of Voice over IP telephone systems with advanced features for efficient business communication.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Network Maintenance</h3>
+                        <p>Ongoing maintenance, monitoring, and support services to ensure your network operates at peak performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Banner Section -->
+    <section class="logo-banner">
+        <div class="container">
+            <img src="Image/Logo.png" alt="SKY POINT Logo">
+            <h2>Trusted Network Solutions Provider</h2>
+            <p>With years of experience in the UAE market, SKY POINT delivers reliable cable and wireless network installations for businesses and homes across Abu Dhabi and beyond.</p>
+        </div>
+    </section>
+
+    <!-- Cable vs Wireless Section -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cable vs Wireless Networks</h2>
+                <p>Understanding the advantages of different network solutions</p>
+            </div>
+            
+            <div class="comparison-content">
+                <div class="comparison-box cable">
+                    <div class="comparison-icon">
+                        <i class="fas fa-ethernet"></i>
+                    </div>
+                    <h3>Structured Cabling</h3>
+                    <p>Structured cabling provides the physical infrastructure that supports data communication throughout a building or campus. It forms the backbone of any reliable network system.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Higher reliability and stability</li>
+                        <li>Faster data transmission speeds</li>
+                        <li>Enhanced security with physical access control</li>
+                        <li>Less susceptible to interference</li>
+                        <li>Better for high-bandwidth applications</li>
+                        <li>Long-term infrastructure investment</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-box wireless">
+                    <div class="comparison-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Wireless Networks</h3>
+                    <p>Wireless networks provide flexible connectivity without physical cables, enabling mobility and easy expansion. Modern wireless technologies offer impressive speeds and coverage.</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li>Mobility and device flexibility</li>
+                        <li>Easier to expand and modify</li>
+                        <li>Reduced installation time and cost</li>
+                        <li>Support for IoT and mobile devices</li>
+                        <li>Cleaner appearance with no visible cables</li>
+                        <li>Guest access capabilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Solutions Section -->
+    <section class="network-solutions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Custom Network Solutions</h2>
+                <p>Tailored solutions for different environments and requirements</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <div class="solution-item">
+                    <h3>Commercial Networks</h3>
+                    <p>Robust network infrastructure for offices, retail spaces, and commercial buildings with high availability requirements, multiple users, and business-critical applications.</p>
+                </div>
+                
+                <div class="solution-item">
+                    <h3>Residential Networks</h3>
+                    <p>Home network solutions that provide seamless connectivity for entertainment, work-from-home setups, smart home devices, and family usage patterns.</p>
+                </div>
+                
+                <div class="solution-item">
+                    <h3>Industrial Networks</h3>
+                    <p>Ruggedized network solutions for manufacturing facilities, warehouses, and industrial environments with specialized requirements for durability and reliability.</p>
+                </div>
+                
+                <div class="solution-item">
+                    <h3>Hospitality Networks</h3>
+                    <p>Guest-focused network solutions for hotels, resorts, and hospitality venues with secure guest access, high bandwidth, and easy management.</p>
+                </div>
+                
+                <div class="solution-item">
+                    <h3>Educational Networks</h3>
+                    <p>Network infrastructure for schools, universities, and educational institutions supporting digital learning, administrative functions, and campus-wide connectivity.</p>
+                </div>
+                
+                <div class="solution-item">
+                    <h3>Healthcare Networks</h3>
+                    <p>Secure, reliable networks for medical facilities with strict compliance requirements, supporting medical devices, patient records, and communication systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Process Section -->
+    <section class="installation-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Installation Process</h2>
+                <p>Professional approach to network implementation</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Needs Assessment</h3>
+                    <p>We conduct a thorough analysis of your requirements, current infrastructure, and future growth plans.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>System Design</h3>
+                    <p>Our engineers create a detailed network design with specifications for hardware, cabling, and configuration.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Equipment Selection</h3>
+                    <p>We help you choose the right networking equipment from leading manufacturers that fits your budget and requirements.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Professional Installation</h3>
+                    <p>Our certified technicians install all components with precision, following industry standards and best practices.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Configuration & Testing</h3>
+                    <p>We configure all network devices and thoroughly test the entire system to ensure optimal performance.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Documentation & Training</h3>
+                    <p>We provide comprehensive documentation and training to ensure your team can effectively manage the network.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Benefits Section -->
+    <section class="network-benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefits of Professional Network Installation</h2>
+                <p>How our network solutions add value to your business or home</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Performance</h3>
+                        <p>Professional installation ensures optimal network performance with faster speeds, lower latency, and reliable connectivity for all your devices.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Improved Security</h3>
+                        <p>Properly configured networks with security protocols protect your data and systems from unauthorized access and cyber threats.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Scalability</h3>
+                        <p>Well-designed networks can easily accommodate growth and new technologies, protecting your investment for years to come.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Reduced Downtime</h3>
+                        <p>Professional installation and proper cable management minimize network issues and reduce costly downtime for your business.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Cost Efficiency</h3>
+                        <p>Proper planning and installation prevent costly rework and ensure your network operates efficiently, saving on energy and maintenance costs.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Professional Support</h3>
+                        <p>With professional installation comes ongoing support, troubleshooting, and maintenance services to keep your network running smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Start Your Network Project</h2>
+                <p>Contact us for a free consultation and quote for your networking needs</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Our Location</h3>
+                        <p>Abu Dhabi, U.A.E</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone Number</h3>
+                        <p>+971 55 180 6383</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Address</h3>
+                        <p>info@skypointuae.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Website</h3>
+                        <p>www.Skypointuae.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="Image/Logo.png" alt="SKY POINT Logo" style="max-width: 200px; margin-bottom: 20px;">
+                    <h3>SKY POINT</h3>
+                    <p>سكاي بونت</p>
+                    <p>GENERAL CONTRACTING & MAINTENANCE - L.L.C- S.P.C</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="cctv.html">CCTV Security & Surveillance</a></li>
+                        <li><a href="interior-exterior-design.html">Interior & Exterior Design</a></li>
+                        <li><a href="cable-wireless-networks.html">Cable & Wireless Networks</a></li>
+                        <li><a href="index.html#services">Site Work & Foundations</a></li>
+                        <li><a href="index.html#services">MEP Contracting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#clients">Clients</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Abu Dhabi, U.A.E</li>
+                        <li><i class="fas fa-phone-alt"></i> +971 55 180 6383</li>
+                        <li><i class="fas fa-envelope"></i> info@skypointuae.com</li>
+                        <li><i class="fas fa-globe"></i> www.Skypointuae.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SKY POINT General Contracting & Maintenance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
